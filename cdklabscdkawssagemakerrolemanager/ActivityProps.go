@@ -14,30 +14,46 @@ type ActivityProps struct {
 	// Experimental.
 	ActivityName *string `field:"required" json:"activityName" yaml:"activityName"`
 	// Whether the activity supports customization for kms data keys and volume keys.
+	// Default: - false.
+	//
 	// Experimental.
 	IsCustomizationAvailableForKMS *bool `field:"required" json:"isCustomizationAvailableForKMS" yaml:"isCustomizationAvailableForKMS"`
 	// Whether the activity supports customization for vpc subnets and vpc security groups.
+	// Default: - false.
+	//
 	// Experimental.
 	IsCustomizationAvailableForVPC *bool `field:"required" json:"isCustomizationAvailableForVPC" yaml:"isCustomizationAvailableForVPC"`
 	// Names of the Athena workgroups to give query permissions.
+	// Default: - none.
+	//
 	// Experimental.
 	AthenaWorkgroupNames *[]*string `field:"optional" json:"athenaWorkgroupNames" yaml:"athenaWorkgroupNames"`
 	// ECR Repositories to give image pull permissions.
+	// Default: - none.
+	//
 	// Experimental.
 	EcrRepositories *[]awsecr.IRepository `field:"optional" json:"ecrRepositories" yaml:"ecrRepositories"`
 	// Names of the Glue Databases to give permissions to search tables.
+	// Default: - none.
+	//
 	// Experimental.
 	GlueDatabaseNames *[]*string `field:"optional" json:"glueDatabaseNames" yaml:"glueDatabaseNames"`
 	// Roles to allow passing as passed roles to actions.
+	// Default: - none.
+	//
 	// Experimental.
 	RolesToPass *[]awsiam.IRole `field:"optional" json:"rolesToPass" yaml:"rolesToPass"`
 	// S3 Buckets to give read and write permissions.
+	// Default: - none.
+	//
 	// Experimental.
 	S3Buckets *[]awss3.IBucket `field:"optional" json:"s3Buckets" yaml:"s3Buckets"`
 	// Version of the SageMaker Activity.
 	//
 	// This version will be used to fetch the policy template that corresponds to the
 	// Activity.
+	// Default: - 1.
+	//
 	// Experimental.
 	Version *float64 `field:"optional" json:"version" yaml:"version"`
 }
